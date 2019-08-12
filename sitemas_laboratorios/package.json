@@ -1,16 +1,11 @@
 {
-  "name": "laboratorios",
+  "name": "sitemas_laboratorios",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "firebase": "^6.3.5",
-    "jquery": "^3.4.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "sweetalert2": "^8.15.3"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
