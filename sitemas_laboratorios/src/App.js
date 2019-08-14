@@ -4,6 +4,11 @@ import firebase from './componentes/configuracion_firebase/firebase';
 
 import Header from './componentes/Header';
 
+import Horarios from './componentes/Horarios';
+import AgregarHorario from './componentes/AgregarHorario';
+import EditarHorario from './componentes/EditarHorario';
+import Horario from './componentes/Horario';
+
 import Laboratorios from './componentes/Laboratorios';
 import AgregarLaboratorio from './componentes/AgregarLaboratorio';
 import EditarLaboratorio from './componentes/EditarLaboratorio';
@@ -17,7 +22,7 @@ function App() {
 
   const [recargarLaboratorios, guardarRecargarLaboratorios] = useState(true);
 
-
+  const [horarios, guardarHorarios] = useState([]);
 //conexion firebase
   useEffect(() => {
     if (recargarLaboratorios) {
@@ -76,8 +81,42 @@ function App() {
               )
             }}
           />
-          {/*aqui empieza las rutas de los horarios*/}
+
+
+
+          {/*HORARIOSSSSSSSSSSS*/}
           
+          <Route exact path="/horarios"
+            render={() => (
+              <Horarios
+                horarios={horarios}
+              />
+            )}
+          />
+          <Route exact path="/nuevo-horario"
+            render={() => (
+              <AgregarHorario
+                datos={laboratorios}
+               
+              />
+            )} />
+          <Route exact path="/horarios/:id" component={Horario} />
+          <Route exact path="/horarios/editar/:id"
+            render={props => {
+              // tomar el id del horario
+              const idHorario = props.match.params.id;
+
+              //el lab que se pasa al state
+              const horario = horarios.filter(horario => horario.id ===
+                idHorario);
+              return (
+                <EditarHorario
+                  horario={horario[0]}
+                //guardarRecargarLaboratorios={guardarRecargarLaboratorios}
+                />
+              )
+            }}
+          />
       
          
           {/*aqui empieza la ruta del marcador*/}
