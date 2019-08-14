@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Swal from 'sweetalert2';
-import firebase from './config/firebase';
+import firebase from './configuracion_firebase/firebase';
 
 function HorarioLista({ horario }) {
 

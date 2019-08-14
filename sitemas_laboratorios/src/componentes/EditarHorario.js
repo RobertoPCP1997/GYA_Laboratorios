@@ -4,7 +4,7 @@ import Error from './Error';
 
 import Swal from 'sweetalert2';
 import { withRouter } from 'react-router-dom';
-import firebase from './config/firebase';
+import firebase from './configuracion_firebase/firebase';
 
 function EditarHorario(props) {
 
