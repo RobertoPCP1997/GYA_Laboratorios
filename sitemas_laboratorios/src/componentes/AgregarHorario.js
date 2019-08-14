@@ -74,7 +74,6 @@ function AgregarHorario({history, datos}){
                     type="text"
                     className="form-control"
                     name="docente"
-                    placeholder="Docente"
                     onChange={e => guardarNombreDocente(e.target.value)}
                 />
             </div>
@@ -85,7 +84,6 @@ function AgregarHorario({history, datos}){
                             type="text"
                             className="form-control"
                             name="materia"
-                            placeholder="Materia"
                             onChange={e => guardarMateria(e.target.value)}
                         />
                     </div>
@@ -96,7 +94,6 @@ function AgregarHorario({history, datos}){
                                 type="time"
                                 className="form-control"
                                 name="horaini"
-                                placeholder="Materia"
                                 onChange={e => guardarHorainicio(e.target.value)}
                             />
                         </div>
@@ -106,30 +103,29 @@ function AgregarHorario({history, datos}){
                                 type="time"
                                 className="form-control"
                                 name="horafin"
-                                placeholder="Materia"
                                 onChange={e => guardarHorafin(e.target.value)}
                             />
                         </div>
                     </div>
                     <div className="form-group">
-                        <label>Laboratorio</label>
+                        <label>Seleccione Laboratorio</label>
                         <select 
                             className="form-control" 
                             name="laboratorio" 
                             onChange={e => guardarLab(e.target.value)}>
-                                <option>Seleccione un laboratorio</option>
+                                <option>laboratorio 1</option>
                                 {datos.map(dato => (
                                     <OpcionesLab key={dato.id} dato={dato} />
                                 ))}
                         </select>
                     </div>
                     <div className="form-group">
-                        <label>Día</label>
+                        <label>Seleccione día</label>
                         <select 
                             className="form-control" 
                             name="dia" 
                             onChange={e => guardarDia(e.target.value)}>
-                                <option>Seleccione un día</option>
+                                <option>Lunes</option>
                                 <option value="Lunes">Lunes</option>
                                 <option value="Martes" >Martes</option>
                                 <option value="Miercoles">Miercoles</option>

@@ -33,7 +33,13 @@ function App() {
         }))
         guardarLaboratorios(datos);
       });
-      
+      firebase.firestore().collection('clases').onSnapshot((snapshot) => {
+        const datos = snapshot.docs.map((dato) => ({
+          id: dato.id,
+          ...dato.data()
+        }))
+        guardarHorarios(datos);
+      });
     }
     //cambiar a false la recarga de los datos para que no se esté consultando a la API a cada rato
     guardarRecargarLaboratorios(false);
@@ -112,6 +118,7 @@ function App() {
               return (
                 <EditarHorario
                   horario={horario[0]}
+                  datos={laboratorios}
                 //guardarRecargarLaboratorios={guardarRecargarLaboratorios}
                 />
               )

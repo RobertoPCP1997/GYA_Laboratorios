@@ -1,7 +1,6 @@
 import React from 'react';
 
-import firebase from '../componentes/configuracion_firebase/firebase';
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 function Header({ history }) {
 
@@ -23,13 +22,7 @@ function Header({ history }) {
                                         <a class="dropdown-item" href="/horarios">Listado</a>
                                         <a class="dropdown-item" href="/nuevo-horario">Curso nuevo</a>
                                     <div class="dropdown-divider"></div>
-                                        <li className="nav-item">
-                                            <NavLink
-                                                to='/nuevo-laboratorio'
-                                                className="nav-link"
-                                                activeClassName="active"
-                                            >Nuevo Laboratorio</NavLink>
-                                        </li>
+                                        
 
                                         <li className="nav-item">
                                 <NavLink
