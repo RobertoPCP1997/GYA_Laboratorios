@@ -22,7 +22,7 @@ function HorarioLista({ horario }) {
         }).then(async (result) => {
             if (result.value) {
                 try {
-                    firebase.firestore().collection('horario').doc(id).delete()
+                    firebase.firestore().collection('clases').doc(id).delete()
                         .then(
                             Swal.fire(
                                 'Eliminado!',

@@ -49,7 +49,7 @@ function EditarHorario(props) {
         }
         //Actualizando los datos en firebase
         try {
-            firebase.firestore().collection('horario').doc(horario.id).update(editarHorario)
+            firebase.firestore().collection('clases').doc(horario.id).update(editarHorario)
                 .then(Swal.fire({
                     position: 'center',
                     type: 'success',

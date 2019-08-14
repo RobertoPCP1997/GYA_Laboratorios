@@ -29,7 +29,7 @@ function AgregarHorario({history, datos}){
 
         //se crea el nuevo producto
         try {
-            firebase.firestore().collection('horario')
+            firebase.firestore().collection('clases')
             .add({
                 nombreDocente,
                 materia,

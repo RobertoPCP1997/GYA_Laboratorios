@@ -1,4 +1,6 @@
 import React from 'react';
+
+import firebase from '../componentes/configuracion_firebase/firebase';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 
 function Header({ history }) {
@@ -18,8 +20,8 @@ function Header({ history }) {
                                         
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Adminsitrar Cursos </a>
                                      <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Listado</a>
-                                        <a class="dropdown-item" href="#">Curso nuevo</a>
+                                        <a class="dropdown-item" href="/horarios">Listado</a>
+                                        <a class="dropdown-item" href="/nuevo-horario">Curso nuevo</a>
                                     <div class="dropdown-divider"></div>
                                         <li className="nav-item">
                                             <NavLink
@@ -29,6 +31,21 @@ function Header({ history }) {
                                             >Nuevo Laboratorio</NavLink>
                                         </li>
 
+                                        <li className="nav-item">
+                                <NavLink
+                                    to='/horarios'
+                                    className="nav-link"
+                                    activeClassName="active"
+                                >Horarios</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink
+                                    to='/nuevo-horario'
+                                    className="nav-link"
+                                    activeClassName="active"
+                                >Nuevo Horario</NavLink>
+                            </li>
                                         
                             </li>
                             
