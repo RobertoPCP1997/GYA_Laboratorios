@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import firebase from './componentes/configuracion_firebase/firebase';
-
 import Header from './componentes/Header';
 import Login from './componentes/autentificacion/Login';
-
 import Horarios from './componentes/Horarios';
 import AgregarHorario from './componentes/AgregarHorario';
 import EditarHorario from './componentes/EditarHorario';
 import Horario from './componentes/Horario';
-
 import Laboratorios from './componentes/Laboratorios';
 import AgregarLaboratorio from './componentes/AgregarLaboratorio';
 import EditarLaboratorio from './componentes/EditarLaboratorio';

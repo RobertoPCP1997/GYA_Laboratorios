@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import firebase from '../componentes/configuracion_firebase/firebase';
 import Swal from 'sweetalert2';
-import { withRouter, Link, NavLink } from 'react-router-dom';
+import { withRouter, NavLink, Link } from 'react-router-dom';
 
 function Header({ history }) {
 
@@ -12,7 +12,7 @@ function Header({ history }) {
         Swal.fire({
         
             type: 'success',
-            title: 'Sesión cerrada con exito, vuelva pronto.',
+            title: 'Sesión cerrada',
            
             showConfirmButton: false,
             timer: 1500
@@ -30,6 +30,7 @@ function Header({ history }) {
     })
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-2 mb-5">
+            {autenticacion ? (
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
 
@@ -59,7 +60,7 @@ function Header({ history }) {
                     </li>
                 </ul>
             </div>
-           
+           ) :<Link to="/" className="navbar-brand" >SISTEMA PARA LA ASIGNASION DE LABORATORIOS</Link>}
         </nav>
     )
 }
