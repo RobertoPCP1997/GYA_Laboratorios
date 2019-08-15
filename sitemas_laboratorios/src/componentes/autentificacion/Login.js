@@ -12,10 +12,8 @@ import {withRouter} from 'react-router-dom';
         try {
             await firebase.auth().signInWithEmailAndPassword(correo, contrasena);
             Swal.fire({
-                position: 'center',
                 type: 'success',
-                title: 'Excelente',
-                text: 'Sesión iniciada con éxito!',
+                title: 'Iniciando',
                 showConfirmButton: false,
                 timer: 1500
             })

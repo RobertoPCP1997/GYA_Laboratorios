@@ -17,6 +17,8 @@ function Laboratorios({ laboratorios, guardarRecargarLaboratorios }) {
                         ))}
                     </ul>
                 </div>
+              
+         
         </Fragment>
     )
 }

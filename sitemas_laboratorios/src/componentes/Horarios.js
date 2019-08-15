@@ -4,7 +4,6 @@ import HorarioLista from './HorarioLista';
 function Horarios({horarios, guardarRecargarLaboratorios, auth}){
     return (
         <Fragment>
-             
                 <div>
                     <h1 className="text-center">Horarios</h1>
                     <ul className="list-group mt-5">
@@ -17,7 +16,7 @@ function Horarios({horarios, guardarRecargarLaboratorios, auth}){
                         ))}
                     </ul>
                 </div>
-           
+        
         </Fragment>
     )
 }

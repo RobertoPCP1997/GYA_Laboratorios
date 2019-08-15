@@ -148,7 +148,7 @@ function App() {
         
         </Switch>
       </main>
-      <p className="mt-4 p2 text-center">Todos los derechos reservados</p>
+     
     </Router>
   );
 }
