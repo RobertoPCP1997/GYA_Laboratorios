@@ -155,7 +155,7 @@ function EditarHorario(props) {
                     </select>
                 </div>
 
-                <input type="submit" className="font-weight-bold text-uppercase mt-5 btn btn-primary btn-block py-3" value="Editar Laboratorio" />
+                <input type="submit" className="font-weight-bold text-uppercase mt-5 btn btn-primary btn-block py-3" value="Editar Clase" />
             </form>
         </div>
     )
