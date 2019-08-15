@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import firebase from './componentes/configuracion_firebase/firebase';
 
 import Header from './componentes/Header';
+import Login from './componentes/autentificacion/Login';
 
 import Horarios from './componentes/Horarios';
 import AgregarHorario from './componentes/AgregarHorario';
@@ -23,6 +24,7 @@ function App() {
   const [recargarLaboratorios, guardarRecargarLaboratorios] = useState(true);
 
   const [horarios, guardarHorarios] = useState([]);
+  const [autenticacion, guardarAutenticacion]=useState([]);
 //conexion firebase
   useEffect(() => {
     if (recargarLaboratorios) {
@@ -44,7 +46,15 @@ function App() {
     //cambiar a false la recarga de los datos para que no se esté consultando a la API a cada rato
     guardarRecargarLaboratorios(false);
 
-  
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        //state true cuando se en encuentra logeado
+        return guardarAutenticacion(true);
+      } else {
+        //El state se pone en false si el usuario esta logeado
+        return guardarAutenticacion(false);
+      }
+    })
   }, [recargarLaboratorios])
 
   return (
@@ -52,14 +62,20 @@ function App() {
       <Header />
       <main className="container mt-5">
         <Switch>
-          
+        <Route exact path="/"
+            render={() => (
+              <Login
+                recargar={guardarRecargarLaboratorios}
+              />
+            )}
+          />
           {/*aqui empieza las rutas de los laboratorisos*/}
           <Route exact path="/laboratorios"
             render={() => (
               <Laboratorios
                 laboratorios={laboratorios}
                 guardarRecargarLaboratorios={guardarRecargarLaboratorios}
-               
+                auth={autenticacion}
               />
             )}
           />
@@ -67,7 +83,7 @@ function App() {
             render={() => (
               <AgregarLaboratorio
                 guardarRecargarLaboratorios={guardarRecargarLaboratorios}
-                
+                auth={autenticacion}
               />
             )} />
           <Route exact path="/laboratorios/:id" component={Laboratorio} />
@@ -96,6 +112,7 @@ function App() {
             render={() => (
               <Horarios
                 horarios={horarios}
+                auth={autenticacion}
               />
             )}
           />
@@ -103,6 +120,7 @@ function App() {
             render={() => (
               <AgregarHorario
                 datos={laboratorios}
+                auth={autenticacion}
                
               />
             )} />

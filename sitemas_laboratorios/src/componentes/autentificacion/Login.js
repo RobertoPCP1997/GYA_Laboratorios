@@ -1,6 +1,6 @@
 import React ,{useState}from 'react';
 import Swal from 'sweetalert2';
-import firebase from '../config/firebase';
+import firebase from '../configuracion_firebase/firebase';
 import {withRouter} from 'react-router-dom';
 
  function Login({history,recargar}) {
